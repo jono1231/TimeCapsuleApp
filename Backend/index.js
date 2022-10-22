@@ -23,4 +23,3 @@ mongoose.connect(uri)
         app.listen(port, () => console.log("Server running!")))
     .catch((error) => console.log(error.message));
 
-;
