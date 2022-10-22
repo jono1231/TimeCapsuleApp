@@ -8,8 +8,6 @@ function App() {
   const [feedBoxes, setFeedBoxes] = useState(FeedBoxData.data.feed);
   //use setFeedBoxes when pulling from database
 
-
-
   let feedBoxElements = feedBoxes.map(feedBox => (
     <FeedBox 
       id={feedBox.id}
