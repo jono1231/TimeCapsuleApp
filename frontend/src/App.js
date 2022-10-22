@@ -11,7 +11,7 @@ function App() {
     <FeedBox 
       id={feedBox.id}
       profilePic={feedBox.profilePic}
-      name={feedBox.name}
+      username={feedBox.username}
       postDate={feedBox.postDate}
       memoryDate={feedBox.memoryDate}
       imagePic={feedBox.imagePic}
