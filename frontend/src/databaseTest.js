@@ -4,7 +4,7 @@ export default {
             {
                 "id": 0,
                 "profilePic": "./profilepic.png",
-                "name": "Joshua",
+                "username": "Joshua",
                 "postDate": "10/22/22",
                 "memoryDate": "9/22/22",
                 "imagePic": "./postimage.jpg",
@@ -14,7 +14,7 @@ export default {
             {
                 "id": 1,
                 "profilePic": "./profilepic2.jpg",
-                "name": "Joshua",
+                "username": "random person",
                 "postDate": "10/22/23",
                 "memoryDate": "5/12/10",
                 "imagePic": "./postimage2.jpg",
