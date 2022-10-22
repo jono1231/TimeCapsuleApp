@@ -4,16 +4,27 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+const { MongoClient } = require("mongodb");
 
-app.use((req, res, next) => {
-  res.send('Welcome to Express');
-});
+// Replace the uri string with your connection string.
+const uri =
+  "mongodb+srv://Jono1231:jono1231@cluster0.twlypnm.mongodb.net/?retryWrites=true&w=majority";
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+const client = new MongoClient(uri);
+
+async function run() {
+  try {
+    const database = client.db('Encapsulation');
+    const profiles = database.collection('Profile');
+
+    // Query for a movie that has the title 'Back to the Future'
+    const query = { Username: 'Super' };
+    const name = await profiles.findOne(query);
+
+    console.log(name);
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
