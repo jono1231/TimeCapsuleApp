@@ -7,33 +7,45 @@
 .feedbox--profileimg {
     height: 50px;
     width: 50px;
-    border-width: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-color: white;
 }
 
 .feedbox--username {
     color: white;
+
     font-size: 40px;
 }
 
 .feedbox--postdate {
     color: white;
     font-size: 10px;
+    padding-left: 10px;
+    padding-right: 1030px;
 }
 
 .feedbox--memorydate {
     color: white;
+    padding-right: 10px;
     font-size: 10px;
 }
 
 .feedbox--postimg {
     height: auto;
-    width: 1250px;
+    width: 1150px;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 .feedbox--note {
     color: white;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
 }
