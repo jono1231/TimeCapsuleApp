@@ -2,10 +2,13 @@ import './App.css';
 import React, {useState} from 'react';
 import FeedBox from './FeedBox.js';
 import FeedBoxData from './databaseTest.js';
+import PostCreationPage from './PostCreationPage.js';
 
 function App() {
   const [feedBoxes, setFeedBoxes] = useState(FeedBoxData.data.feed);
   //use setFeedBoxes when pulling from database
+
+
 
   let feedBoxElements = feedBoxes.map(feedBox => (
     <FeedBox 
@@ -18,8 +21,11 @@ function App() {
       note={feedBox.note}
     />
   ));
+
+  
   return (
     <div className="App">
+      <PostCreationPage />
       {feedBoxElements}
     </div>
   );
