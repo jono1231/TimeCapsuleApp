@@ -1,7 +1,7 @@
 .feedbox {
     border-style: solid;
     border-width: 1px;
-    border-color: white;
+    border-color: rgba(255, 255, 255, 0.457);
 }
 
 .feedbox--profileimg {
@@ -13,24 +13,27 @@
 
 .feedbox--username {
     color: white;
+    font-size: 40px;
 }
 
 .feedbox--postdate {
     color: white;
-
+    font-size: 10px;
 }
 
 .feedbox--memorydate {
     color: white;
-
+    font-size: 10px;
 }
 
 .feedbox--postimg {
-    height: 100px;
-    width: 100px;
+    height: auto;
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .feedbox--note {
     color: white;
-
+    text-align: center;
 }
