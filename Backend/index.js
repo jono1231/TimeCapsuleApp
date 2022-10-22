@@ -3,9 +3,11 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-import { TopologyDescriptionChangedEvent } from 'mongodb';
+import postRoutes from './routes/posts.js';
 
 const app = express();
+
+app.use('/post', postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
@@ -20,3 +22,5 @@ mongoose.connect(uri)
     .then(() =>
         app.listen(port, () => console.log("Server running!")))
     .catch((error) => console.log(error.message));
+
+;
