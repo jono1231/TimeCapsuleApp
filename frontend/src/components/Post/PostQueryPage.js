@@ -1,3 +1,4 @@
+import { DoorBack } from '@mui/icons-material';
 import React, { useState } from 'react';
 import Feed from '../Feed/Feed';
 import FeedBox from '../Feed/FeedBox';
@@ -25,18 +26,12 @@ export default function PostQueryPage() {
     
     async function handleSubmit(event) {
         const postURL = "http://localhost:5000/post" //Our previously set up route in the backend
+        let response = await fetch(postURL);
 
-        fetch(postURL)
-        .then(response => {
-            console.log(response);
-        })
-        .then(data => {
-            FeedBox(data);
-            console.log(data);
-        })
-        .catch(error => {
-            //handle error
-        });
+        if(response.ok){
+            let json = await response.json();
+            
+        }
     }
 
     return (

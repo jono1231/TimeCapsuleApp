@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import postRoutes from './routes/posts.js';
-import PostMessage from './models/postMessage.js';
 
 const app = express();
 
