@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPost } from '../actions/actions.js';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function PostCreationPage() {
 
@@ -8,6 +10,7 @@ export default function PostCreationPage() {
             message: ""
         }
     );
+    const dispatch = useDispatch();
 
     function handleChange(event) {
         const {name, value, type, checked} = event.target
@@ -20,9 +23,14 @@ export default function PostCreationPage() {
     }
     
     function handleSubmit(event) {
-        event.preventDefault()
-        // submitToApi(formData)
-        console.log(postFormData)
+        event.preventDefault();
+        dispatch(createPost(postFormData));
+        clear();
+        console.log(postFormData);
+    }
+
+    function clear(){
+        setPostFormData({message: "",im: ""});
     }
 
     return (
