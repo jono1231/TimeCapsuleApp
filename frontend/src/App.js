@@ -22,9 +22,16 @@ function App() {
 
   
   return (
-    <div className="App">
-      <PostCreationPage />
-      {feedBoxElements}
+    <div className="app">
+      <div className = "app--sidebar">
+        <Sidebar />
+      </div>
+      <div className = "app--creationpage">
+       <PostCreationPage />
+      </div>
+      <div className = "app--feed">
+        <Feed />
+      </div>
     </div>
   );
 }
