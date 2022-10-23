@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import PostMessage from './backend/models/postMessage';
+
 
 export default function PostCreationPage() {
 
@@ -21,8 +23,14 @@ export default function PostCreationPage() {
     
     function handleSubmit(event) {
         event.preventDefault()
-        // submitToApi(formData)
         console.log(postFormData)
+        
+        let post = new PostMessage({
+            title: postFormData.message,
+            message: postFormData.img,
+        })
+        post.save();
+
     }
 
     return (
