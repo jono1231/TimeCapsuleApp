@@ -6,9 +6,7 @@ import FeedBoxData from './databaseTest.js';
 export default function Feed() {
     const [feedBoxes, setFeedBoxes] = useState(FeedBoxData.data.feed);
     //use setFeedBoxes when pulling from database
-  
-  
-  
+
     let feedBoxElements = feedBoxes.map(feedBox => (
       <FeedBox 
         key={feedBox.id}

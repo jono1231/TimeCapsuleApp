@@ -7,9 +7,15 @@ import Feed from './Feed.js'
 function App() {
   return (
     <div className="app">
-      <Sidebar className="app--sidebar" />
-      <PostCreationPage className="app--creationpage" />
-      <Feed className="app--feed" />
+      <div className = "app--sidebar">
+        <Sidebar />
+      </div>
+      <div className = "app--creationpage">
+       <PostCreationPage />
+      </div>
+      <div className = "app--feed">
+        <Feed />
+      </div>
     </div>
   );
 }

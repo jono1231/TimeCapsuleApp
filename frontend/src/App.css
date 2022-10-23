@@ -1,22 +1,25 @@
 .app {
     background-color: black;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr, 2fr, 1fr;
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 10px;
+    justify-items: start;
 }
 
 .app--sidebar {
-    grid-column: 1;
+    border-width:200px;
+    grid-column: 1/2;
     grid-row: 2/3;
 }
 
 .app--creationpage {
-    grid-column: 1;
+    grid-column: 2/3;
     grid-row: 1;
 }
 
 .app--feed {
     grid-column: 2 / 3;
-    grid-row: 1; 
+    grid-row: 2; 
 }
