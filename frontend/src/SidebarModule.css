@@ -1,0 +1,16 @@
+.sidebarmodule {
+    color: blue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    padding-bottom: px;
+}
+
+.sidebarmodule--img {
+    height: 50px;
+    width: 50px;
+}
+
+.sidebarmodule--modulename {
+    color: white;
+}
