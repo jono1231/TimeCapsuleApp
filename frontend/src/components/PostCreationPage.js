@@ -4,11 +4,13 @@ export default function PostCreationPage() {
 
     const [postFormData, setPostFormData] = useState(
         {
-            img: "",
             message: "",
-            username: ""
+            username: "",
+            selectedFile: ""
         }
     );
+    
+    const [file, setFile] = useState();
 
     function handleChange(event) {
         const {name, value, type, checked} = event.target
@@ -18,10 +20,31 @@ export default function PostCreationPage() {
                 [name]: type === "checkbox" ? checked : value
             }
         })
+        console.log(postFormData);
+    }
+
+    function handleImageChange(event){
+        let file = event.target.files[0];
+
+        if(file){
+            const reader = new FileReader();
+            reader.onload = readerLoad.bind(this);
+            reader.readAsBinaryString(file);
+        }
+
+        console.log(postFormData);
+    }
+
+    function readerLoad(readerEvt){
+        let binaryString = readerEvt.target.result;
+        setPostFormData({
+            selectedFile: btoa(binaryString)
+        })
     }
     
     function handleSubmit(event) {
         const postURL = "http://localhost:5000/post" //Our previously set up route in the backend
+        
         fetch(postURL, {
             method: 'POST',
             headers: {
@@ -31,9 +54,10 @@ export default function PostCreationPage() {
             body: JSON.stringify({ // We should keep the fields consistent for managing this data later
                 creator: postFormData.username,
                 title: postFormData.message,
-                message: postFormData.img,
+                selectedFile: postFormData.selectedFile,
             })
         })
+
     }
 
     function clear(){
@@ -57,12 +81,14 @@ export default function PostCreationPage() {
                 name = "message"
             />
             <input 
-                type = "text"
-                placeholder = "Upload an img"
+                type = "file"
+                multiple = "false"
+                accept=".png, .jpg, .jpeg"
                 value = {postFormData.img}
-                onChange = {handleChange}
+                onChange = {handleImageChange}
                 name = "img"
             />
+            <img src = {file} />
             <button>Post</button>
 
         </form>
