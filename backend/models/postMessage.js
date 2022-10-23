@@ -3,10 +3,9 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const postSchema = new Schema({
-    title:  String,
+    creator: String,
+    title: String,
     message: String,
-    creator:   String,
-    tags: [String],
     likeCount: { 
         votes: Number, 
         default: 0 

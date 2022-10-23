@@ -23,8 +23,8 @@ function App() {
   
   return (
     <div className="App">
-      {feedBoxElements}
       <PostCreationPage />
+      {feedBoxElements}
     </div>
   );
 }

@@ -22,10 +22,3 @@ mongoose.connect(uri)
     .then(() =>
         app.listen(port, () => console.log("Server running!")))
     .catch((error) => console.log(error.message));
-
-let testPost = new PostMessage({
-  username: "test",
-  message: "this is a cool message",
-  creator: "epic cool guy",
-})
-testPost.save();
