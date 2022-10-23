@@ -20,6 +20,7 @@ export default function PostCreationPage() {
                 [name]: type === "checkbox" ? checked : value
             }
         })
+        
         console.log(postFormData);
     }
 
