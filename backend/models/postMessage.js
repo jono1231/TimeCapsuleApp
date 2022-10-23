@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const postSchema = new Schema({
     creator: String,
     title: String,
-    message: String,
+    selectedFile: String,
     likeCount: { 
         votes: Number, 
         default: 0 
