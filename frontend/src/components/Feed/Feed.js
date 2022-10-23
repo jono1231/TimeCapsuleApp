@@ -1,7 +1,7 @@
 import './Feed.css';
 import React, {useState} from 'react';
 import FeedBox from './FeedBox.js';
-import FeedBoxData from './databaseTest.js';
+import FeedBoxData from '../../databaseTest.js';
 
 export default function Feed() {
     const [feedBoxes, setFeedBoxes] = useState(FeedBoxData.data.feed);

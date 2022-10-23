@@ -1,8 +1,11 @@
 import './App.css';
 import React, {useState} from 'react';
-import FeedBox from './components/FeedBox.js';
+import FeedBox from './components/Feed/FeedBox.js';
 import FeedBoxData from './databaseTest.js';
-import PostCreationPage from './components/PostCreationPage.js';
+import PostCreationPage from './components/Post/PostCreationPage.js';
+import PostQueryPage from './components/Post/PostQueryPage';
+import Feed from './components/Feed/Feed.js';
+import Sidebar from './components/Sidebar/Sidebar.js'
 
 function App() {
   const [feedBoxes, setFeedBoxes] = useState(FeedBoxData.data.feed);
@@ -28,6 +31,7 @@ function App() {
       </div>
       <div className = "app--creationpage">
        <PostCreationPage />
+       <PostQueryPage />
       </div>
       <div className = "app--feed">
         <Feed />

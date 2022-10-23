@@ -20,8 +20,6 @@ export default function PostCreationPage() {
                 [name]: type === "checkbox" ? checked : value
             }
         })
-        
-        console.log(postFormData);
     }
 
     function handleImageChange(event){
@@ -32,14 +30,14 @@ export default function PostCreationPage() {
             reader.onload = readerLoad.bind(this);
             reader.readAsBinaryString(file);
         }
-
-        console.log(postFormData);
     }
 
     function readerLoad(readerEvt){
         let binaryString = readerEvt.target.result;
         setPostFormData({
-            selectedFile: btoa(binaryString)
+            selectedFile: btoa(binaryString),
+            username: postFormData.username,
+            message: postFormData.message
         })
     }
     
@@ -81,9 +79,9 @@ export default function PostCreationPage() {
                 onChange = {handleChange}
                 name = "message"
             />
-            <input 
+            <input  
                 type = "file"
-                multiple = "false"
+                multiple = {false}
                 accept=".png, .jpg, .jpeg"
                 value = {postFormData.img}
                 onChange = {handleImageChange}
