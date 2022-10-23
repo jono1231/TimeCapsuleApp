@@ -1,8 +1,8 @@
 import './App.css';
 import React, {useState} from 'react';
-import FeedBox from './FeedBox.js';
+import FeedBox from './components/FeedBox.js';
 import FeedBoxData from './databaseTest.js';
-import PostCreationPage from './PostCreationPage.js';
+import PostCreationPage from './components/PostCreationPage.js';
 
 function App() {
   const [feedBoxes, setFeedBoxes] = useState(FeedBoxData.data.feed);
@@ -23,8 +23,8 @@ function App() {
   
   return (
     <div className="App">
-      <PostCreationPage />
       {feedBoxElements}
+      <PostCreationPage />
     </div>
   );
 }
